@@ -5,3 +5,4 @@ dist/
 .env
 tools/.its-key
 tools/.its-calls.json
+tools/watchdog.log
