@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: "*/5 * * * *"   # GitHub 사정에 따라 5~15분 간격으로 실행돼요
   workflow_dispatch:
+    inputs:
+      force_day:
+        description: "점검용: 밤에도 카메라 고르기를 돌려 봐요 (고른 결과는 저장 안 함)"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -12,7 +17,7 @@ concurrency:
 jobs:
   capture:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - name: 이전 결과 가져오기
@@ -29,6 +34,7 @@ jobs:
       - name: 화면 찍기
         env:
           CAMS: ${{ secrets.CAMS }}
+          FORCE_DAY: ${{ inputs.force_day && '1' || '0' }}
         run: node capture/capture.mjs
       - name: gh-pages에 올리기 (기록을 쌓지 않고 덮어써요)
         run: |
