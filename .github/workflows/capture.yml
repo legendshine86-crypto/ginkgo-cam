@@ -28,8 +28,7 @@ jobs:
           node-version: 22
       - name: 화면 찍기
         env:
-          ITS_KEY: ${{ secrets.ITS_KEY }}
-          ENC_KEY: ${{ secrets.ENC_KEY }}
+          CAMS: ${{ secrets.CAMS }}
         run: node capture/capture.mjs
       - name: gh-pages에 올리기 (기록을 쌓지 않고 덮어써요)
         run: |
