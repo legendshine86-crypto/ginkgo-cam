@@ -2,7 +2,7 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@toss/tds-mobile";
 import { Accuracy, Device } from "@apps-in-toss/web-framework";
 import {
-  AREAS, type Area, type Feed, type Spot, agoText, clockText, img, isLive, loadFeed,
+  AREAS, type Area, type Feed, type Spot, agoText, clockText, img, isLive, isNight, loadFeed,
   minutesAgo, nearbyLine, reasonLine, sortSpots, km,
 } from "./data";
 
@@ -55,7 +55,7 @@ export default function App() {
 
 // ---------- 오프닝 ----------
 function Intro({ feed, onStart }: { feed: Feed | null; onStart: () => void }) {
-  const hero = feed?.spots.find(s => s.status === "ok" && !s.dark) ?? feed?.spots.find(s => s.snap);
+  const hero = feed?.spots.find(s => s.status === "ok" && !isNight(s)) ?? feed?.spots.find(s => s.snap);
   return (
     <main className="intro">
       <div className="intro-photo">
@@ -135,7 +135,7 @@ function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error:
                 <div className="thumb">
                   {s.thumb ? <img src={img(s.thumb)} alt="" loading="lazy" /> : <div className="ph" />}
                   <span className={`ago ${live ? "" : "off"}`}><i />{live ? agoText(min) : "화면 잠시 끊김"}</span>
-                  {live && s.dark && <span className="night">밤이라 어두워요</span>}
+                  {live && isNight(s) && <span className="night">밤 화면이에요</span>}
                 </div>
                 <div className="info">
                   <b>{s.name}</b>
@@ -171,7 +171,7 @@ function Detail({ spot: s, feed, now, onRefresh, onFull }: { spot: Spot; feed: F
         <span>{clockText(s.capturedAt)}</span>
       </div>
       <p className="band">{live ? "보통 5~15분마다 새 화면으로 바뀌어요" : `${agoText(min)}이 마지막이에요. 카메라가 다시 연결되면 바로 바뀌어요`}</p>
-      {live && s.dark && <p className="band night">밤이라 화면이 어두워요. 해가 뜨면 잘 보여요</p>}
+      {live && isNight(s) && <p className="band nightband">밤이라 색이 잘 안 보여요. 해가 뜨면 단풍 색을 확인할 수 있어요</p>}
 
       <h1>{s.name}</h1>
       <p className="region">{s.region}</p>

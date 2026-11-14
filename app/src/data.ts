@@ -51,6 +51,14 @@ export function clockText(iso?: string) {
   return `${h < 12 ? "오전" : "오후"} ${h % 12 || 12}:${m} 촬영`;
 }
 
+// 카메라가 밤에도 흐릿하게 찍혀서 밝기보다 한국 시각으로 판단해요 (오후 6시~오전 7시)
+export function isNight(s: Spot) {
+  if (s.dark) return true;
+  if (!s.capturedAt) return false;
+  const h = (new Date(s.capturedAt).getUTCHours() + 9) % 24;
+  return h >= 18 || h < 7;
+}
+
 export function isLive(s: Spot, now: number) {
   return (s.status === "ok" || s.status === "stale") && minutesAgo(s.capturedAt, now) <= STALE_MIN;
 }

@@ -16,7 +16,7 @@ img { display: block; }
 .intro { min-height: 100vh; display: flex; flex-direction: column; }
 .intro-photo { position: relative; aspect-ratio: 4 / 3; background: #d1d6db; }
 .intro-photo img { width: 100%; height: 100%; object-fit: cover; }
-.intro-photo .cap { position: absolute; right: 10px; bottom: 10px; font-size: 12px; color: #fff; background: rgba(0,0,0,.45); padding: 3px 8px; border-radius: 6px; }
+.intro-photo .cap { position: absolute; right: 10px; top: 10px; font-size: 12px; color: #fff; background: rgba(0,0,0,.45); padding: 3px 8px; border-radius: 6px; }
 .intro h1 { margin: 28px 24px 0; font-size: 26px; line-height: 1.35; }
 .intro .lead { margin: 12px 24px 0; color: var(--sub); font-size: 16px; line-height: 1.6; }
 .promise { margin: 24px 24px 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; flex: 1; }
@@ -47,7 +47,7 @@ img { display: block; }
 .ago { position: absolute; left: 10px; top: 10px; display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,.6); color: #fff; font-size: 13px; font-weight: 600; padding: 4px 9px; border-radius: 8px; }
 .ago i { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
 .ago.off i { background: #b0b8c1; }
-.night { position: absolute; right: 10px; top: 10px; background: rgba(0,0,0,.6); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 8px; }
+.thumb .night { position: absolute; right: 10px; top: 10px; background: rgba(0,0,0,.6); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 8px; }
 .info { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 4px; }
 .info b { font-size: 17px; }
 .region { font-size: 14px; color: var(--mute); }
@@ -65,7 +65,7 @@ img { display: block; }
 .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
 .dot.off { background: #b0b8c1; }
 .band { margin: 10px 20px 0; padding: 10px 12px; border-radius: 10px; background: var(--bg); font-size: 14px; color: var(--sub); }
-.band.night { background: var(--amber); color: #7a5200; }
+.band.nightband { background: var(--amber); color: #7a5200; }
 .detail h1 { margin: 24px 20px 0; font-size: 22px; }
 .detail .region { display: block; margin: 4px 20px 0; }
 .note { margin: 16px 20px 0; padding: 14px; border-radius: 12px; background: #fff7ef; }
