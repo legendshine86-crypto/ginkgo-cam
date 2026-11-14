@@ -9,6 +9,7 @@ export interface Spot {
   id: string; name: string; kind: "ginkgo" | "cherry"; area: Area; region: string;
   lat: number; lng: number; approx: boolean; status: Status;
   camera?: Camera; capturedAt?: string; dark?: boolean; snap?: string; thumb?: string;
+  candidates?: number; pickedBy?: "color" | "nearest";
 }
 export interface Feed { updatedAt: string; source: string; spots: Spot[] }
 
@@ -83,6 +84,10 @@ export function nearbyLine(s: Spot) {
   return `명소에서 ${s.camera.km.toFixed(1)}km 떨어진 ${s.camera.name} 화면이에요`;
 }
 export function reasonLine(s: Spot) {
+  const color = s.kind === "ginkgo" ? "노란 잎이" : "꽃이";
   const season = s.kind === "ginkgo" ? "단풍 드는" : "꽃 피는";
-  return `명소 안쪽엔 공개 카메라가 없어요. 같은 지역이라 ${season} 시기가 비슷해요`;
+  if (s.pickedBy === "color" && (s.candidates ?? 0) > 1) {
+    return `명소 안쪽엔 공개 카메라가 없어요. 주변 카메라 ${s.candidates}대 중 ${color} 가장 많이 보이는 화면을 매일 낮에 골라 보여드려요`;
+  }
+  return `명소 안쪽엔 공개 카메라가 없어서 가장 가까운 화면을 보여드려요. 같은 지역이라 ${season} 시기가 비슷해요`;
 }
