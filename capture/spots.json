@@ -1,0 +1,202 @@
+[
+  {
+    "id": "asan-gokgyocheon",
+    "name": "아산 곡교천 은행나무길",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 아산",
+    "city": "아산",
+    "geo": [
+      "현충사",
+      "곡교천"
+    ],
+    "camera": "아산 송곡2리교차로",
+    "lat": 36.80715,
+    "lng": 127.03284,
+    "geoFound": "현충사, 현충사길, 백암리, 아산시, 충청남도, 31450, 대한민국"
+  },
+  {
+    "id": "wonju-bangye",
+    "name": "원주 반계리 은행나무",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 원주",
+    "city": "원주",
+    "geo": [
+      "반계리 은행나무"
+    ],
+    "camera": "원주 반계IC",
+    "lat": 37.29429,
+    "lng": 127.78865,
+    "geoFound": "은행나무, 25-1, 문막읍, 원주시, 강원특별자치도, 26361, 대한민국"
+  },
+  {
+    "id": "gumi-nongso",
+    "name": "구미 농소리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 구미",
+    "city": "구미",
+    "geo": [
+      "농소리"
+    ],
+    "approx": true,
+    "camera": "구미 서낭당고개",
+    "lat": 36.31078,
+    "lng": 128.27139,
+    "geoFound": "농소리, 구미시, 경상북도, 39102, 대한민국"
+  },
+  {
+    "id": "cheongdo-jagye",
+    "name": "청도 자계서원 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 청도",
+    "city": "청도",
+    "geo": [
+      "자계서원"
+    ],
+    "camera": "청도 구곡교",
+    "lat": 35.65422,
+    "lng": 128.67617,
+    "geoFound": "자계서원, 이서로, 서원리, 이서면, 청도군, 경상북도, 38317, 대한민국"
+  },
+  {
+    "id": "cheongdo-jeokcheon",
+    "name": "청도 적천사 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 청도",
+    "city": "청도",
+    "geo": [
+      "적천사"
+    ],
+    "camera": "청도 신거교",
+    "lat": 35.61307,
+    "lng": 128.73814,
+    "geoFound": "적천사, 원리, 청도읍, 청도군, 경상북도, 대한민국"
+  },
+  {
+    "id": "cheongdo-daejeon",
+    "name": "청도 대전리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 청도",
+    "city": "청도",
+    "geo": [
+      "청도 대전리 은행나무"
+    ],
+    "camera": "청도 신당교차로",
+    "lat": 35.6602,
+    "lng": 128.63355,
+    "geoFound": "대전리 은행나무, 헐티로, 송서리, 풍각면, 청도군, 경상북도, 38309, 대한민국"
+  },
+  {
+    "id": "gyeongju-ungok",
+    "name": "경주 운곡서원 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 경주",
+    "city": "경주",
+    "geo": [
+      "운곡서원"
+    ],
+    "camera": "포항 인주교차로 북측",
+    "lat": 35.94067,
+    "lng": 129.30094,
+    "geoFound": "운곡서원, 사라길, 강동면, 경주시, 경상북도, 38033, 대한민국"
+  },
+  {
+    "id": "gyeongju-dori",
+    "name": "경주 도리마을 은행나무숲",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 경주",
+    "city": "경주",
+    "geo": [
+      "서면 경주"
+    ],
+    "approx": true,
+    "camera": "경주 천포삼거리(건천IC)",
+    "lat": 35.87122,
+    "lng": 129.0625,
+    "geoFound": "경주터널 서울방향 3차로, 경부고속도로, 서면, 경주시, 경상북도, 38053, 대한민국"
+  },
+  {
+    "id": "yeongcheon-imgo",
+    "name": "영천 임고서원 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 영천",
+    "city": "영천",
+    "geo": [
+      "임고서원"
+    ],
+    "camera": "영천 신호교차로(남측)",
+    "lat": 36.01673,
+    "lng": 128.97346,
+    "geoFound": "임고서원, 포은로, 임고면, 영천시, 경상북도, 38817, 대한민국"
+  },
+  {
+    "id": "gimcheon-joryong",
+    "name": "김천 조룡리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 김천",
+    "city": "김천",
+    "geo": [
+      "조룡리"
+    ],
+    "approx": true,
+    "camera": "김천 연화2리마을회관",
+    "lat": 35.95479,
+    "lng": 127.94607,
+    "geoFound": "조룡리, 김천시, 경상북도, 39689, 대한민국"
+  },
+  {
+    "id": "yeongyang-seoseokji",
+    "name": "영양 서석지 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 영양",
+    "city": "영양",
+    "geo": [
+      "서석지"
+    ],
+    "camera": "영양 문학테마공원",
+    "lat": 36.61182,
+    "lng": 129.06961,
+    "geoFound": "서석지, 청기로, 연당리, 입암면, 영양군, 경상북도, 36546, 대한민국"
+  },
+  {
+    "id": "andong-yonggye",
+    "name": "안동 용계리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 안동",
+    "city": "안동",
+    "geo": [
+      "용계리"
+    ],
+    "approx": true,
+    "camera": "안동 신덕교",
+    "lat": 36.49289,
+    "lng": 128.92335,
+    "geoFound": "용계리, 안동시, 경상북도, 36735, 대한민국"
+  },
+  {
+    "id": "taean-heungju",
+    "name": "태안 흥주사 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 태안",
+    "city": "태안",
+    "geo": [
+      "흥주사"
+    ],
+    "camera": "태안 두야교회교차로",
+    "lat": 36.77122,
+    "lng": 126.31399,
+    "geoFound": "흥주사, 상옥리, 태안군, 충청남도, 대한민국"
+  }
+]
