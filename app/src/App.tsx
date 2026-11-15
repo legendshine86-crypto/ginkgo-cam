@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Button } from "@toss/tds-mobile";
 import { Accuracy, Device } from "@apps-in-toss/web-framework";
+import MapView from "./MapView";
 import {
   AREAS, type Area, type Feed, type Spot, agoText, clockText, img, isLive, isNight, loadFeed,
   minutesAgo, nearbyLine, reasonLine, sortSpots, km,
@@ -74,10 +75,17 @@ function Intro({ onStart }: { onStart: () => void }) {
   );
 }
 
-// ---------- 목록 ----------
+// ---------- 목록 (지도가 기본, 목록으로 바꿔 볼 수 있어요) ----------
+// 상세 화면에 다녀와도 고른 탭·지역·보기 방식이 그대로 남도록 밖에 저장해 둬요
+const listState: { tab: "ginkgo" | "cherry"; area: Area | "all"; mode: "map" | "list" } = { tab: "ginkgo", area: "all", mode: "map" };
+
 function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error: boolean; now: number; onRetry: () => void; onOpen: (id: string) => void }) {
-  const [tab, setTab] = useState<"ginkgo" | "cherry">("ginkgo");
-  const [area, setArea] = useState<Area | "all">("all");
+  const [tab, setTabState] = useState(listState.tab);
+  const [area, setAreaState] = useState(listState.area);
+  const [mode, setModeState] = useState(listState.mode);
+  const setTab = (v: typeof tab) => { listState.tab = v; setTabState(v); };
+  const setArea = (v: typeof area) => { listState.area = v; setAreaState(v); };
+  const setMode = (v: typeof mode) => { listState.mode = v; setModeState(v); };
   const [me, setMe] = useState<{ lat: number; lng: number } | null>(null);
   const [locMsg, setLocMsg] = useState("");
 
@@ -97,8 +105,10 @@ function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error:
     return sortSpots(all, now, me);
   }, [feed, tab, area, now, me]);
 
+  const emptyText = tab === "cherry" ? "벚꽃 명소는 봄에 열려요" : "이 지역은 아직 화면을 볼 수 있는 명소가 없어요";
+
   return (
-    <main className="list">
+    <main className={`list ${mode === "map" ? "mapmode" : ""}`}>
       <header className="top">
         <h1>지금 그 길</h1>
         <div className="tabs" role="tablist">
@@ -110,48 +120,58 @@ function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error:
         </div>
         <div className="sortbar">
           <span>{spots.length}곳</span>
-          <button className="sort" onClick={askNear} aria-label={me ? "가까운 순으로 보는 중. 누르면 추천순으로 바뀌어요" : "추천순으로 보는 중. 누르면 가까운 순으로 바뀌어요"}>{me ? "가까운 순" : "추천순"}</button>
+          <div className="sortbar-right">
+            {mode === "list" && (
+              <button className="sort" onClick={askNear} aria-label={me ? "가까운 순으로 보는 중. 누르면 추천순으로 바뀌어요" : "추천순으로 보는 중. 누르면 가까운 순으로 바뀌어요"}>{me ? "가까운 순" : "추천순"}</button>
+            )}
+            <div className="seg" role="group" aria-label="보기 방식">
+              <button aria-pressed={mode === "map"} onClick={() => setMode("map")}>지도</button>
+              <button aria-pressed={mode === "list"} onClick={() => setMode("list")}>목록</button>
+            </div>
+          </div>
         </div>
-        {locMsg && <p className="locmsg">{locMsg}</p>}
+        {mode === "list" && locMsg && <p className="locmsg">{locMsg}</p>}
       </header>
 
       {error && !feed && (
         <div className="empty"><p>화면 목록을 불러오지 못했어요</p><Button variant="weak" onClick={onRetry}>다시 불러오기</Button></div>
       )}
       {!feed && !error && <div className="empty"><p>불러오는 중이에요</p></div>}
-      {feed && tab === "cherry" && spots.length === 0 && (
-        <div className="empty"><p>벚꽃 명소는 봄에 열려요</p><span>꽃이 피기 시작하면 이곳에서 지금 모습을 볼 수 있어요</span></div>
-      )}
-      {feed && tab === "ginkgo" && spots.length === 0 && (
-        <div className="empty"><p>이 지역은 아직 화면을 볼 수 있는 명소가 없어요</p></div>
-      )}
 
-      <ul className="cards">
-        {spots.map(s => {
-          const min = minutesAgo(s.capturedAt, now), live = isLive(s, now);
-          return (
-            <li key={s.id}>
-              <button className="card" onClick={() => onOpen(s.id)}>
-                <div className="thumb">
-                  {s.thumb ? <img src={img(s.thumb)} alt="" loading="lazy" /> : <div className="ph" />}
-                  <span className={`ago ${live ? "" : "off"}`}><i />{live ? agoText(min) : "화면 잠시 끊김"}</span>
-                  {live && isNight(s) && <span className="night">밤 화면이에요</span>}
-                </div>
-                <div className="info">
-                  <b>{s.name}</b>
-                  <span className="region">{s.region}{me ? ` · 내 위치에서 ${Math.round(km(me.lat, me.lng, s.lat, s.lng))}km` : ""}</span>
-                  {s.camera && <span className="badge">{s.camera.km.toFixed(1)}km 떨어진 근처 화면</span>}
-                </div>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
+      {feed && mode === "map" && <MapView spots={spots} area={area} now={now} onOpen={onOpen} onShowAll={() => setArea("all")} emptyText={emptyText} />}
 
-      <footer className="foot">
-        <p><b>가고 싶은 명소가 없나요?</b><br />토스 고객센터 문의로 장소를 건의해 주세요.</p>
-        <p className="src">화면 출처: {feed?.source ?? "국가교통정보센터(ITS) 교통 CCTV"}</p>
-      </footer>
+      {feed && mode === "list" && (
+        <>
+          {spots.length === 0 && (
+            <div className="empty"><p>{emptyText}</p>{tab === "cherry" && <span>꽃이 피기 시작하면 이곳에서 지금 모습을 볼 수 있어요</span>}</div>
+          )}
+          <ul className="cards">
+            {spots.map(s => {
+              const min = minutesAgo(s.capturedAt, now), live = isLive(s, now);
+              return (
+                <li key={s.id}>
+                  <button className="card" onClick={() => onOpen(s.id)}>
+                    <div className="thumb">
+                      {s.thumb ? <img src={img(s.thumb)} alt="" loading="lazy" /> : <div className="ph" />}
+                      <span className={`ago ${live ? "" : "off"}`}><i />{live ? agoText(min) : "화면 잠시 끊김"}</span>
+                      {live && isNight(s) && <span className="night">밤 화면이에요</span>}
+                    </div>
+                    <div className="info">
+                      <b>{s.name}</b>
+                      <span className="region">{s.region}{me ? ` · 내 위치에서 ${Math.round(km(me.lat, me.lng, s.lat, s.lng))}km` : ""}</span>
+                      {s.camera && <span className="badge">{s.camera.km.toFixed(1)}km 떨어진 근처 화면</span>}
+                    </div>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+          <footer className="foot">
+            <p><b>가고 싶은 명소가 없나요?</b><br />토스 고객센터 문의로 장소를 건의해 주세요.</p>
+            <p className="src">화면 출처: {feed?.source ?? "국가교통정보센터(ITS) 교통 CCTV"}</p>
+          </footer>
+        </>
+      )}
     </main>
   );
 }
