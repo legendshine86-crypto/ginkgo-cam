@@ -7,3 +7,5 @@ tools/.its-key
 tools/.its-calls.json
 tools/watchdog.log
 work/
+lambda/bin/
+lambda/spots.json

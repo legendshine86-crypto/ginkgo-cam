@@ -1,5 +1,5 @@
-// 화면 데이터: GitHub Pages에 몇 분마다 올라오는 spots.json과 사진
-export const BASE = "https://legendshine86-crypto.github.io/ginkgo-cam/";
+// 화면 데이터: AWS Lambda가 5분마다 S3(서울)에 올리는 spots.json과 사진
+export const BASE = "https://now-that-road-cam-6201bde4.s3.ap-northeast-2.amazonaws.com/";
 
 export type Area = "capital" | "chungcheong" | "gyeongsang" | "jeolla" | "gangwon" | "jeju";
 export type Status = "ok" | "stale" | "off" | "nocam";
