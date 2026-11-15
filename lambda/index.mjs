@@ -11,6 +11,7 @@ const s3 = new S3Client({});
 const WORK = "/tmp/work";
 const SPOTS = JSON.parse(readFileSync(new URL("./spots.json", import.meta.url), "utf8"));
 const HOUR = 36e5, DAY = 24 * HOUR;
+const SCAN_PER_RUN = 12;
 
 // zip에 실행 권한이 빠질 수 있어 /tmp로 복사해 권한을 줘요
 function ffmpegPath() {
@@ -100,10 +101,12 @@ export async function handler(event = {}) {
   // ITS는 클라우드(AWS 포함) IP에서 접속이 막혀 있어서, 주소는 국내 PC가 state/cams.json에 넣어 줘요
   if (!state.fetchedAt) { console.log("state/cams.json이 없어요. PC에서 node tools/refresh-cams.mjs를 실행해 주세요"); return "no cams"; }
 
-  const makePlan = () => SPOTS.map(s => {
+  // 명소 목록은 PC가 cams.json에 같이 넣어 줘요 (없으면 함께 묶인 spots.json)
+  const LIST = Array.isArray(state.spots) && state.spots.length ? state.spots : SPOTS;
+  const makePlan = () => LIST.map(s => {
     const cands = (state.cams[s.id] || []).map((c, i) => ({ ...c, i, km: km(s.lat, s.lng, c.lat, c.lng) }));
     const pick = picks[s.id];
-    const current = cands.find(c => c.name === pick?.name) || cands.find(c => c.name.includes(s.camera)) || cands[0];
+    const current = cands.find(c => c.name === pick?.name) || (s.camera && cands.find(c => c.name.includes(s.camera))) || cands[0];
     const scanAll = DAYTIME && (!pick || pick.day !== today || !cands.some(c => c.name === pick.name));
     return { s, cands, current, scanAll };
   });
@@ -117,7 +120,11 @@ export async function handler(event = {}) {
     return shot;
   };
 
-  const plan = makePlan(), shot = await shoot(plan);
+  // 명소가 많아져서 한 번에 후보를 다 훑으면 시간이 모자라요. 한 번에 SCAN_PER_RUN곳씩, 나머지는 다음 차례(5분 뒤)에 훑어요
+  const plan = makePlan();
+  let budget = SCAN_PER_RUN;
+  for (const p of [...plan].sort((a, b) => !!picks[a.s.id] - !!picks[b.s.id])) if (p.scanAll && budget-- <= 0) p.scanAll = false;
+  const shot = await shoot(plan);
 
   // ---------- 고르기 ----------
   const score = c => c.r.yellow * 100 - 0.5 * c.km; // 노란색 1%p ≈ 2km

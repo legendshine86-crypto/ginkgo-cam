@@ -198,5 +198,676 @@
     "lat": 36.77122,
     "lng": 126.31399,
     "geoFound": "흥주사, 상옥리, 태안군, 충청남도, 대한민국"
+  },
+  {
+    "id": "yangpyeong-yongmun",
+    "name": "양평 용문사 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "경기 양평",
+    "city": "양평",
+    "geo": [
+      "용문사 양평",
+      "용문산관광지"
+    ],
+    "lat": 37.54996,
+    "lng": 127.57152,
+    "geoFound": "용문사, 782, 용문산로, 용문면, 양평군, 경기도, 12510, 대한민국"
+  },
+  {
+    "id": "gwacheon-ginkgo",
+    "name": "과천 은행나무길",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "경기 과천",
+    "city": "과천",
+    "geo": [
+      "정부과천청사",
+      "과천시 중앙동"
+    ],
+    "lat": 37.42647,
+    "lng": 126.98975,
+    "geoFound": "정부과천청사, 지하100, 중앙로, 부림동, 과천시, 경기도, 13837, 대한민국"
+  },
+  {
+    "id": "incheon-grandpark",
+    "name": "인천대공원 은행나무길",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "인천 남동",
+    "city": "인천",
+    "geo": [
+      "인천대공원"
+    ],
+    "lat": 37.44843,
+    "lng": 126.75332,
+    "geoFound": "인천대공원, 수인로, 장수동, 장수서창동, 남동구, 인천광역시, 21541, 대한민국"
+  },
+  {
+    "id": "hwaseong-yunggeon",
+    "name": "화성 융건릉 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "경기 화성",
+    "city": "화성",
+    "geo": [
+      "융건릉"
+    ],
+    "lat": 37.20828,
+    "lng": 126.98898,
+    "geoFound": "융건릉 역사문화관, 효행로, 안녕동, 봉담읍, 병점구, 화성시, 경기도, 18324, 대한민국"
+  },
+  {
+    "id": "suwon-hwaseong",
+    "name": "수원 화성 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "경기 수원",
+    "city": "수원",
+    "geo": [
+      "수원 화성행궁",
+      "화성행궁"
+    ],
+    "lat": 37.2822,
+    "lng": 127.01438,
+    "geoFound": "화성행궁, 행궁로, 남창동, 팔달구, 수원시, 경기도, 16261, 대한민국"
+  },
+  {
+    "id": "yeongwol-hasong",
+    "name": "영월 하송리 은행나무",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 영월",
+    "city": "영월",
+    "geo": [
+      "하송리 영월",
+      "영월읍"
+    ],
+    "lat": 37.18201,
+    "lng": 128.46892,
+    "geoFound": "영월초등학교, 제방안길, 하송리, 영월읍, 영월군, 강원특별자치도, 26236, 대한민국"
+  },
+  {
+    "id": "hongcheon-forest",
+    "name": "홍천 은행나무숲",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 홍천",
+    "city": "홍천",
+    "geo": [
+      "홍천 은행나무숲",
+      "광원리 홍천"
+    ],
+    "lat": 37.82918,
+    "lng": 128.46651,
+    "geoFound": "은행나무숲 주차장, 광원둘래길, 광원리, 내면, 홍천군, 강원특별자치도, 25170, 대한민국"
+  },
+  {
+    "id": "chuncheon-nami",
+    "name": "춘천 남이섬 은행나무길",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 춘천",
+    "city": "춘천",
+    "geo": [
+      "남이섬"
+    ],
+    "lat": 37.79173,
+    "lng": 127.52514,
+    "geoFound": "남이섬, 남산면, 춘천시, 강원특별자치도, 24464, 대한민국"
+  },
+  {
+    "id": "chuncheon-soyang",
+    "name": "춘천 공지천 은행나무길",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 춘천",
+    "city": "춘천",
+    "geo": [
+      "공지천 춘천",
+      "공지천"
+    ],
+    "lat": 37.86624,
+    "lng": 127.72904,
+    "geoFound": "공지천, 효자2동, 춘천시, 강원특별자치도, 대한민국"
+  },
+  {
+    "id": "gangneung-ojukheon",
+    "name": "강릉 오죽헌 은행나무",
+    "kind": "ginkgo",
+    "area": "gangwon",
+    "region": "강원 강릉",
+    "city": "강릉",
+    "geo": [
+      "오죽헌"
+    ],
+    "lat": 37.77856,
+    "lng": 128.87778,
+    "geoFound": "오죽헌, 24, 율곡로3139번길, 지변동, 경포동, 강릉시, 강원특별자치도, 25465, 대한민국"
+  },
+  {
+    "id": "boryeong-cheongna",
+    "name": "보령 청라은행마을",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 보령",
+    "city": "보령",
+    "geo": [
+      "장현리 보령",
+      "청라면"
+    ],
+    "lat": 36.4042,
+    "lng": 126.66333,
+    "geoFound": "청라면, 보령시, 충청남도, 33424, 대한민국"
+  },
+  {
+    "id": "dangjin-myeoncheon",
+    "name": "당진 면천 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 당진",
+    "city": "당진",
+    "geo": [
+      "면천읍성",
+      "면천면"
+    ],
+    "lat": 36.81415,
+    "lng": 126.66067,
+    "geoFound": "면천면, 당진시, 충청남도, 31804, 대한민국"
+  },
+  {
+    "id": "goesan-mungwang",
+    "name": "괴산 문광저수지 은행나무길",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충북 괴산",
+    "city": "괴산",
+    "geo": [
+      "문광저수지"
+    ],
+    "lat": 36.76778,
+    "lng": 127.75048,
+    "geoFound": "문광저수지, 신기리, 문광면, 괴산군, 충청북도, 28056, 대한민국"
+  },
+  {
+    "id": "geumsan-yogwang",
+    "name": "금산 요광리 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 금산",
+    "city": "금산",
+    "geo": [
+      "요광리 금산",
+      "추부면"
+    ],
+    "lat": 36.21836,
+    "lng": 127.48872,
+    "geoFound": "금산로, 요광리, 금산군, 충청남도, 32712, 대한민국"
+  },
+  {
+    "id": "geumsan-boseok",
+    "name": "금산 보석사 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 금산",
+    "city": "금산",
+    "geo": [
+      "보석사 금산",
+      "보석사"
+    ],
+    "lat": 36.05447,
+    "lng": 127.476,
+    "geoFound": "보석사, 석동리, 금산군, 충청남도, 대한민국"
+  },
+  {
+    "id": "cheongju-nangseong",
+    "name": "청주 낭성 은행나무길",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충북 청주",
+    "city": "청주",
+    "geo": [
+      "지산리 청주",
+      "낭성면"
+    ],
+    "lat": 36.63256,
+    "lng": 127.58979,
+    "geoFound": "지산리, 청주시, 충청북도, 28193, 대한민국"
+  },
+  {
+    "id": "yeongdong-yeongguk",
+    "name": "영동 영국사 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충북 영동",
+    "city": "영동",
+    "geo": [
+      "영국사 영동",
+      "영국사"
+    ],
+    "lat": 36.15798,
+    "lng": 127.61092,
+    "geoFound": "영국사, 영국동길, 누교리, 영동군, 충청북도, 대한민국"
+  },
+  {
+    "id": "buyeo-juam",
+    "name": "부여 주암리 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 부여",
+    "city": "부여",
+    "geo": [
+      "주암리 부여"
+    ],
+    "lat": 36.29374,
+    "lng": 126.77682,
+    "geoFound": "주암리, 부여군, 충청남도, 33195, 대한민국"
+  },
+  {
+    "id": "sejong-imnansu",
+    "name": "세종 임난수 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "세종",
+    "city": "세종",
+    "geo": [
+      "세종리 세종",
+      "연기면"
+    ],
+    "lat": 36.50359,
+    "lng": 127.28933,
+    "geoFound": "세종동, 나성동, 세종특별자치시, 대한민국"
+  },
+  {
+    "id": "cheongyang-bongam",
+    "name": "청양 봉암리 은행나무",
+    "kind": "ginkgo",
+    "area": "chungcheong",
+    "region": "충남 청양",
+    "city": "청양",
+    "geo": [
+      "봉암리 청양"
+    ],
+    "lat": 36.41626,
+    "lng": 126.76871,
+    "geoFound": "봉암리, 청양군, 충청남도, 33306, 대한민국"
+  },
+  {
+    "id": "yeongju-sosu",
+    "name": "영주 소수서원 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 영주",
+    "city": "영주",
+    "geo": [
+      "소수서원"
+    ],
+    "lat": 36.92523,
+    "lng": 128.58011,
+    "geoFound": "소수서원, 소백로, 읍내리, 영주시, 경상북도, 36016, 대한민국"
+  },
+  {
+    "id": "yeongju-buseok",
+    "name": "영주 부석사 은행나무길",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 영주",
+    "city": "영주",
+    "geo": [
+      "부석사 영주",
+      "부석사"
+    ],
+    "lat": 36.99739,
+    "lng": 128.68665,
+    "geoFound": "부석사, 915, 북지리, 영주시, 경상북도, 36004, 대한민국"
+  },
+  {
+    "id": "uiryeong-segan",
+    "name": "의령 세간리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경남 의령",
+    "city": "의령",
+    "geo": [
+      "세간리 의령",
+      "유곡면"
+    ],
+    "lat": 35.42041,
+    "lng": 128.29521,
+    "geoFound": "유곡면, 의령군, 경상남도, 52113, 대한민국"
+  },
+  {
+    "id": "hamyang-ungok",
+    "name": "함양 운곡리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경남 함양",
+    "city": "함양",
+    "geo": [
+      "운곡리 함양",
+      "서하면"
+    ],
+    "lat": 35.62036,
+    "lng": 127.67667,
+    "geoFound": "운곡리, 함양군, 경상남도, 50003, 대한민국"
+  },
+  {
+    "id": "sangju-dugok",
+    "name": "상주 두곡리 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 상주",
+    "city": "상주",
+    "geo": [
+      "두곡리",
+      "은척면"
+    ],
+    "lat": 36.56514,
+    "lng": 128.07147,
+    "geoFound": "두곡리, 상주시, 경상북도, 37104, 대한민국"
+  },
+  {
+    "id": "daegu-palgong",
+    "name": "대구 팔공산 은행나무길",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "대구 동구",
+    "city": "대구",
+    "geo": [
+      "동화사",
+      "백안삼거리"
+    ],
+    "lat": 35.99271,
+    "lng": 128.70471,
+    "geoFound": "동화사, Donwhwasa of old trail, 공산동, 동구, 대구광역시, 41007, 대한민국"
+  },
+  {
+    "id": "goryeong-dasan",
+    "name": "고령 다산 은행나무숲",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 고령",
+    "city": "고령",
+    "geo": [
+      "좌학리 고령",
+      "다산면 고령"
+    ],
+    "lat": 35.79106,
+    "lng": 128.3816,
+    "geoFound": "고령 다산일반산업단지, 송곡리, 다산면, 고령군, 경상북도, 40113, 대한민국"
+  },
+  {
+    "id": "gyeongju-tongil",
+    "name": "경주 통일전 은행나무길",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "경북 경주",
+    "city": "경주",
+    "geo": [
+      "통일전"
+    ],
+    "lat": 35.79845,
+    "lng": 129.24033,
+    "geoFound": "통일전, 등산로, 남산동, 월성동, 경주시, 경상북도, 38174, 대한민국"
+  },
+  {
+    "id": "jeonju-hyanggyo",
+    "name": "전주향교 은행나무",
+    "kind": "ginkgo",
+    "area": "jeolla",
+    "region": "전북 전주",
+    "city": "전주",
+    "geo": [
+      "전주향교"
+    ],
+    "lat": 35.81258,
+    "lng": 127.15715,
+    "geoFound": "전주향교, 향교길, 교동, 완산구, 전주시, 전북특별자치도, 55041, 대한민국"
+  },
+  {
+    "id": "naju-geumseong",
+    "name": "나주 금성관 은행나무",
+    "kind": "ginkgo",
+    "area": "jeolla",
+    "region": "전남 나주",
+    "city": "나주",
+    "geo": [
+      "금성관 나주",
+      "나주목"
+    ],
+    "lat": 35.03274,
+    "lng": 126.71679,
+    "geoFound": "금성관, 금성관길, 금계동, 금천면, 나주시, 전남광주통합특별시, 58257, 대한민국"
+  },
+  {
+    "id": "gangjin-byeongyeong",
+    "name": "강진 병영 은행나무",
+    "kind": "ginkgo",
+    "area": "jeolla",
+    "region": "전남 강진",
+    "city": "강진",
+    "geo": [
+      "성동리 강진",
+      "병영면"
+    ],
+    "lat": 34.72096,
+    "lng": 126.81212,
+    "geoFound": "성동리, 강진군, 전남광주통합특별시, 59214, 대한민국"
+  },
+  {
+    "id": "boseong-beolgyo",
+    "name": "보성 벌교 은행나무",
+    "kind": "ginkgo",
+    "area": "jeolla",
+    "region": "전남 보성",
+    "city": "보성",
+    "geo": [
+      "벌교읍"
+    ],
+    "lat": 34.84372,
+    "lng": 127.33979,
+    "geoFound": "벌교읍, 보성군, 전남광주통합특별시, 59424, 대한민국"
+  },
+  {
+    "id": "imsil-ginkgo",
+    "name": "임실 은행나무",
+    "kind": "ginkgo",
+    "area": "jeolla",
+    "region": "전북 임실",
+    "city": "임실",
+    "geo": [
+      "임실읍"
+    ],
+    "lat": 35.6079,
+    "lng": 127.28281,
+    "geoFound": "임실읍, 임실군, 전북특별자치도, 55926, 대한민국"
+  },
+  {
+    "id": "seoul-munmyo",
+    "name": "서울 성균관 문묘 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 종로",
+    "city": "서울",
+    "geo": [
+      "성균관 문묘",
+      "성균관"
+    ],
+    "lat": 37.58513,
+    "lng": 126.99713,
+    "geoFound": "성균관로, 명륜1가, 혜화동, 종로구, 서울특별시, 03074, 대한민국"
+  },
+  {
+    "id": "seoul-deoksugung",
+    "name": "서울 덕수궁 돌담길",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 중구",
+    "city": "서울",
+    "geo": [
+      "덕수궁"
+    ],
+    "lat": 37.56617,
+    "lng": 126.97517,
+    "geoFound": "덕수궁, 99, 세종대로, 태평로2가, 소공동, 중구, 서울특별시, 04519, 대한민국"
+  },
+  {
+    "id": "seoul-samcheong",
+    "name": "서울 삼청동 은행나무길",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 종로",
+    "city": "서울",
+    "geo": [
+      "삼청동"
+    ],
+    "lat": 37.58964,
+    "lng": 126.98112,
+    "geoFound": "삼청동, 종로구, 서울특별시, 03050, 대한민국"
+  },
+  {
+    "id": "seoul-hyoja",
+    "name": "서울 경복궁 효자로",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 종로",
+    "city": "서울",
+    "geo": [
+      "효자로",
+      "경복궁"
+    ],
+    "lat": 37.57816,
+    "lng": 126.97394,
+    "geoFound": "효자로, 적선동, 사직동, 종로구, 서울특별시, 03044, 대한민국"
+  },
+  {
+    "id": "seoul-forest",
+    "name": "서울숲 은행나무숲",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 성동",
+    "city": "서울",
+    "geo": [
+      "서울숲"
+    ],
+    "lat": 37.54359,
+    "lng": 127.04474,
+    "geoFound": "서울숲, 왕십리로, 성수동1가, 성수1가1동, 성동구, 서울특별시, 04778, 대한민국"
+  },
+  {
+    "id": "seoul-yangjae",
+    "name": "서울 양재시민의숲",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 서초",
+    "city": "서울",
+    "geo": [
+      "양재시민의숲",
+      "시민의숲"
+    ],
+    "lat": 37.47013,
+    "lng": 127.03827,
+    "geoFound": "양재시민의숲, 강남대로, 양재동, 양재2동, 서초구, 서울특별시, 06779, 대한민국"
+  },
+  {
+    "id": "seoul-wiryeseong",
+    "name": "서울 위례성대로 은행나무길",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 송파",
+    "city": "서울",
+    "geo": [
+      "위례성대로"
+    ],
+    "lat": 37.51527,
+    "lng": 127.11944,
+    "geoFound": "위례성대로, 오륜동, 송파구, 서울특별시, 05628, 대한민국"
+  },
+  {
+    "id": "seoul-olympic",
+    "name": "서울 올림픽공원",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 송파",
+    "city": "서울",
+    "geo": [
+      "올림픽공원"
+    ],
+    "lat": 37.51615,
+    "lng": 127.13093,
+    "geoFound": "올림픽공원, 양재대로, 오륜동, 송파구, 서울특별시, 05648, 대한민국"
+  },
+  {
+    "id": "seoul-hwarangdae",
+    "name": "서울 화랑대철도공원",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 노원",
+    "city": "서울",
+    "geo": [
+      "화랑대철도공원",
+      "화랑대역"
+    ],
+    "lat": 37.62459,
+    "lng": 127.09321,
+    "geoFound": "화랑대철도공원, 공릉동, 공릉2동, 노원구, 서울특별시, 01802, 대한민국"
+  },
+  {
+    "id": "seoul-banghak",
+    "name": "서울 방학동 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 도봉",
+    "city": "서울",
+    "geo": [
+      "방학동 은행나무",
+      "방학동"
+    ],
+    "lat": 37.66432,
+    "lng": 127.03338,
+    "geoFound": "방학동, 도봉구, 서울특별시, 대한민국"
+  },
+  {
+    "id": "seoul-changgyeong",
+    "name": "서울 창경궁 은행나무",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 종로",
+    "city": "서울",
+    "geo": [
+      "창경궁"
+    ],
+    "lat": 37.58025,
+    "lng": 126.99483,
+    "geoFound": "창경궁, 185, 창경궁로, 명륜2가, 혜화동, 종로구, 서울특별시, 03072, 대한민국"
+  },
+  {
+    "id": "seoul-namsan",
+    "name": "서울 남산 북측순환로",
+    "kind": "ginkgo",
+    "area": "capital",
+    "region": "서울 중구",
+    "city": "서울",
+    "geo": [
+      "남산공원",
+      "남산"
+    ],
+    "lat": 37.55046,
+    "lng": 126.9916,
+    "geoFound": "남산공원, 중구, 서울특별시, 04340, 대한민국"
+  },
+  {
+    "id": "busan-beomeo",
+    "name": "부산 범어사 은행나무",
+    "kind": "ginkgo",
+    "area": "gyeongsang",
+    "region": "부산 금정",
+    "city": "부산",
+    "geo": [
+      "범어사"
+    ],
+    "lat": 35.28408,
+    "lng": 129.06867,
+    "geoFound": "범어사, 250, 범어사로, 청룡동, 청룡노포동, 금정구, 부산광역시, 46200, 대한민국"
   }
 ]
