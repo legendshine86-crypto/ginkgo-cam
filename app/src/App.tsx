@@ -42,7 +42,7 @@ export default function App() {
   const go = (hash: string) => { history.pushState(null, "", hash || location.pathname); setRoute(readRoute()); window.scrollTo(0, 0); };
 
   if (route.name === "intro") {
-    return <Intro feed={feed} onStart={() => { try { localStorage.setItem(SEEN_KEY, "1"); } catch { /* 무시 */ } setRoute({ name: "list" }); }} />;
+    return <Intro onStart={() => { try { localStorage.setItem(SEEN_KEY, "1"); } catch { /* 무시 */ } setRoute({ name: "list" }); }} />;
   }
   if (route.name === "detail") {
     const spot = feed?.spots.find(s => s.id === route.id);
@@ -54,13 +54,13 @@ export default function App() {
 }
 
 // ---------- 오프닝 ----------
-function Intro({ feed, onStart }: { feed: Feed | null; onStart: () => void }) {
-  const hero = feed?.spots.find(s => s.status === "ok" && !isNight(s)) ?? feed?.spots.find(s => s.snap);
+// 오프닝 사진은 시안에서 정한 한국관광공사 은행나무 사진이에요 (public/intro.jpg)
+function Intro({ onStart }: { onStart: () => void }) {
   return (
     <main className="intro">
       <div className="intro-photo">
-        {hero?.snap ? <img src={img(hero.snap)} alt={`${hero.name} 근처 지금 화면`} /> : <div className="ph" />}
-        {hero && <span className="cap">{hero.region} · 교통 카메라 화면</span>}
+        <img src="./intro.jpg" alt="노랗게 물든 은행나무 길" />
+        <span className="cap">사진: 한국관광공사</span>
       </div>
       <h1>그 길, 지금쯤<br />물들었을까요?</h1>
       <p className="lead">작년 사진만 보고 갔다가 아쉬웠던 적 있죠. 이제 떠나기 전에 지금 모습을 먼저 확인해 보세요.</p>
