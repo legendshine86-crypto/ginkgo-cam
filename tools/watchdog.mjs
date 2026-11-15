@@ -10,6 +10,10 @@ try {
   const ageMin = Math.round((Date.now() - Date.parse(feed.updatedAt)) / 60000);
   const camsAgeH = feed.camsFetchedAt ? ((Date.now() - Date.parse(feed.camsFetchedAt)) / 36e5).toFixed(1) : "?";
   log(`찍힘 ${ok}/${total}, 마지막 갱신 ${ageMin}분 전, 주소 받은 지 ${camsAgeH}시간`);
+  // GitHub 예약 실행이 몇 시간씩 밀려서, 화면이 12분 넘게 안 바뀌었으면 직접 실행시켜요 (임시 방편)
+  if (ageMin > 12 && ok >= total / 2) {
+    try { execFileSync("gh", ["workflow", "run", "capture", "-R", "legendshine86-crypto/ginkgo-cam"]); log("화면 찍기를 직접 실행시켰어요"); } catch (e) { log(`실행 실패: ${e.message}`); }
+  }
   if (ok < total / 2) {
     log(`주소가 만료된 것 같아요 (주소 받은 지 ${camsAgeH}시간). 새로 받아요`);
     const out = execFileSync(process.execPath, [new URL("./refresh-cams.mjs", import.meta.url).pathname.replace(/^\/(\w:)/, "$1")], { encoding: "utf8" });
