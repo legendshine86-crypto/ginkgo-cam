@@ -110,7 +110,7 @@ function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error:
         </div>
         <div className="sortbar">
           <span>{spots.length}곳</span>
-          <button className="sort" onClick={askNear}>{me ? "가까운 순 ✓" : "추천순 · 가까운 순으로 보기"}</button>
+          <button className="sort" onClick={askNear} aria-label={me ? "가까운 순으로 보는 중. 누르면 추천순으로 바뀌어요" : "추천순으로 보는 중. 누르면 가까운 순으로 바뀌어요"}>{me ? "가까운 순" : "추천순"}</button>
         </div>
         {locMsg && <p className="locmsg">{locMsg}</p>}
       </header>
