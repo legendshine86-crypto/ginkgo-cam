@@ -4,7 +4,7 @@ import { Accuracy, Device } from "@apps-in-toss/web-framework";
 import MapView from "./MapView";
 import {
   AREAS, type Area, type Feed, type Spot, agoText, clockText, img, isLive, isNight, loadFeed,
-  minutesAgo, nearbyLine, reasonLine, sortSpots, km,
+  minutesAgo, nearbyLine, reasonLine, sortSpots, km, srcLabel,
 } from "./data";
 
 type Route = { name: "intro" } | { name: "list" } | { name: "detail"; id: string; full?: boolean };
@@ -49,7 +49,7 @@ export default function App() {
     const spot = feed?.spots.find(s => s.id === route.id);
     if (!spot) return <div className="center">{feed ? "명소를 찾지 못했어요" : "불러오는 중이에요"}</div>;
     if (route.full) return <Full spot={spot} now={now} onClose={() => history.back()} />;
-    return <Detail spot={spot} feed={feed!} now={now} onRefresh={refresh} onFull={() => go(`#/spot/${spot.id}/full`)} />;
+    return <Detail spot={spot} now={now} onRefresh={refresh} onFull={() => go(`#/spot/${spot.id}/full`)} />;
   }
   return <List feed={feed} error={error} now={now} onRetry={refresh} onOpen={id => go(`#/spot/${id}`)} />;
 }
@@ -177,7 +177,7 @@ function List({ feed, error, now, onRetry, onOpen }: { feed: Feed | null; error:
 }
 
 // ---------- 상세 ----------
-function Detail({ spot: s, feed, now, onRefresh, onFull }: { spot: Spot; feed: Feed; now: number; onRefresh: () => void; onFull: () => void }) {
+function Detail({ spot: s, now, onRefresh, onFull }: { spot: Spot; now: number; onRefresh: () => void; onFull: () => void }) {
   const min = minutesAgo(s.capturedAt, now), live = isLive(s, now);
   return (
     <main className="detail">
@@ -207,7 +207,7 @@ function Detail({ spot: s, feed, now, onRefresh, onFull }: { spot: Spot; feed: F
       <dl className="facts">
         <div><dt>카메라</dt><dd>{s.camera ? `${s.camera.name}${s.camera.road ? ` (${s.camera.road})` : ""}` : "-"}</dd></div>
         <div><dt>명소와 거리</dt><dd>{s.camera ? `약 ${s.camera.km.toFixed(1)}km` : "-"}</dd></div>
-        <div><dt>출처</dt><dd>{feed.source}</dd></div>
+        <div><dt>출처</dt><dd>{srcLabel(s.camera)}</dd></div>
       </dl>
 
       <div className="bottom"><Button display="full" variant="weak" onClick={onRefresh}>새 화면 확인하기</Button></div>
@@ -221,7 +221,7 @@ function Full({ spot: s, now, onClose }: { spot: Spot; now: number; onClose: () 
     <div className="full" onClick={onClose}>
       {s.snap && <img src={img(s.snap)} alt={`${s.name} 근처 화면 크게 보기`} />}
       <div className="fullbar">
-        <span>{agoText(minutesAgo(s.capturedAt, now))} · {clockText(s.capturedAt)}</span>
+        <span>{agoText(minutesAgo(s.capturedAt, now))} · {clockText(s.capturedAt)}<br /><small>{srcLabel(s.camera)}</small></span>
         <button onClick={onClose}>닫기</button>
       </div>
     </div>

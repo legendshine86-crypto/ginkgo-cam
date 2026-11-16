@@ -150,12 +150,12 @@ export async function handler(event = {}) {
       return { ...base, status: "off" };
     }
     uploads.push(putJpg(`snap/${s.id}.jpg`, `${WORK}/${s.id}-${chosen.i}.jpg`), putJpg(`thumb/${s.id}.jpg`, `${WORK}/${s.id}-${chosen.i}.t.jpg`));
-    const camera = { name: chosen.name.replace(/^\[[^\]]+\]\s*/, ""), road: (chosen.name.match(/^\[([^\]]+)\]/) || [])[1] || "", lat: chosen.lat, lng: chosen.lng, km: Math.round(chosen.km * 10) / 10 };
+    const camera = { name: chosen.name.replace(/^\[[^\]]+\]\s*/, ""), road: (chosen.name.match(/^\[([^\]]+)\]/) || [])[1] || "", lat: chosen.lat, lng: chosen.lng, km: Math.round(chosen.km * 10) / 10, src: chosen.src || "its" };
     return { ...base, camera, pickedBy, status: "ok", capturedAt: now, dark: chosen.r.brightness < 0.12, snap: `snap/${s.id}.jpg?v=${v}`, thumb: `thumb/${s.id}.jpg?v=${v}` };
   });
 
   await Promise.all(uploads); // 사진을 먼저 올리고 목록을 바꿔요
-  await putJson("spots.json", { updatedAt: now, camsFetchedAt: state.fetchedAt, source: "국가교통정보센터(ITS) 교통 CCTV", spots: out });
+  await putJson("spots.json", { updatedAt: now, camsFetchedAt: state.fetchedAt, source: "국가교통정보센터(ITS)·경찰청 도시교통정보센터(UTIC) 교통 CCTV", spots: out });
   if (!TRIAL) await putJson("state/pick.json", picks);
 
   const summary = `찍은 카메라 ${shot.size}대 (${DAYTIME ? "낮" : "밤"}) / 새 화면 ${out.filter(s => s.status === "ok").length} / 이전 화면 ${out.filter(s => s.status === "stale").length} / 실패 ${out.filter(s => s.status === "off" || s.status === "nocam").length}`;

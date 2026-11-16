@@ -4,7 +4,14 @@ export const BASE = "https://now-that-road-cam-6201bde4.s3.ap-northeast-2.amazon
 export type Area = "capital" | "chungcheong" | "gyeongsang" | "jeolla" | "gangwon" | "jeju";
 export type Status = "ok" | "stale" | "off" | "nocam";
 
-export interface Camera { name: string; road: string; lat: number; lng: number; km: number }
+export interface Camera { name: string; road: string; lat: number; lng: number; km: number; src?: "its" | "utic" }
+
+// 화면 출처: 국도·고속도로는 국가교통정보센터, 서울 시내는 경찰청 도시교통정보센터(UTIC, 표기 의무)
+export function srcLabel(c?: Camera): string {
+  if (!c) return "-";
+  const src = c.src ?? (c.road ? "its" : "utic");
+  return src === "utic" ? "경찰청 도시교통정보센터(UTIC) 제공" : "국가교통정보센터(ITS) 제공";
+}
 export interface Spot {
   id: string; name: string; kind: "ginkgo" | "cherry"; area: Area; region: string;
   lat: number; lng: number; approx: boolean; status: Status;

@@ -69,11 +69,18 @@ export default function MapView({ spots, area, now, onOpen, onShowAll, emptyText
     anim.current = requestAnimationFrame(step);
   };
 
-  // 지역을 고르면 그 지역으로 이동
+  // 지역을 고르면 그 지역 명소들이 화면에 꽉 차게 (명소가 없으면 지역 전체)
+  const areaView = (a: MapArea): Box => {
+    const pts = spots.filter(s => s.area === a).map(s => project(s.lat, s.lng));
+    if (!pts.length) return pad(AREA_BOX[a], 0.08);
+    const xs = pts.map(p => p[0]), ys = pts.map(p => p[1]);
+    const x0 = Math.min(...xs), y0 = Math.min(...ys);
+    return pad([x0, y0, Math.max(...xs) - x0, Math.max(...ys) - y0], 0.35);
+  };
   useEffect(() => {
     memory.area = area;
     if (firstArea.current) { firstArea.current = false; return; } // 돌아왔을 때는 보던 위치 유지
-    flyTo(area === "all" ? FULL : pad(AREA_BOX[area], 0.08));
+    flyTo(area === "all" ? FULL : areaView(area));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [area]);
 

@@ -1,4 +1,4 @@
-out/
+﻿out/
 node_modules/
 dist/
 *.ait
@@ -9,4 +9,7 @@ tools/watchdog.log
 work/
 lambda/bin/
 lambda/spots.json
-tools/.its-cam-points.json
+tools/.its-last.json
+
+tools/.utic-key
+tools/.utic-*
